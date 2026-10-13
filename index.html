@@ -1,46 +1,79 @@
-<html>
-    <head>
-        <title>
-            1st page for Push
-        </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MathZone</div>
         <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About">About us</a></li>
-            <li><a href="#Contact">Conatct Us</a></li>
-            <li><a href="#Jecrc">JECRC FOUNDATION</a></li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>JECRC FOUNDATION</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#jecrc">JECRC Foundation</a></li>
         </ul>
-        <script>
-            
-            // let a=parseInt(prompt("Enter a value of a : "));
-            // let b=parseInt(prompt("Enter a value of b : "));
-            // let c=a+b;
-            // document.write("The sum is : "+c);
-            document.getElementById("first").textContent=a;
-            document.getElementById("second").textContent=b;
-            document.getElementById("output").textContent="Sum : "+(a+b);
-        </script>
-        <table>
-            <thead>
-                <tr>
-                    <td>S.NO</td>
-                    <td>first</td>
-                    <td>second</td>
-                    <td>final output</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td id="first"></td>
-                    <td>+</td>
-                    <td id="second"></td>
-                    <td id="output"></td>
-                </tr>
-            </thead>
-        </table>
-    </body>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="icon">✖</div>
+            <h1>Multiplication Table Generator</h1>
+            <p>Learn multiplication tables in a simple and interactive way.</p>
+
+            <form id="tableForm">
+                <input
+                    type="number"
+                    id="num"
+                    min="1"
+                    max="100"
+                    placeholder="Enter a number (e.g. 5)"
+                    required
+                >
+                <button type="submit">Generate Tables ↗</button>
+                <button type="button" id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+            </form>
+
+            <p class="hint">Enter 5 to generate tables from 1 to 5.</p>
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="results" id="results">
+            <div class="section-heading">
+                <h2>Your Multiplication Tables</h2>
+                <span id="count"></span>
+            </div>
+
+            <div id="tableContainer" class="table-grid">
+                <div class="empty-state">
+                    <div class="empty-icon">∑</div>
+                    <h3>Ready to learn?</h3>
+                    <p>Enter a number above to generate your tables.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info" id="about">
+            <h2>About MathZone</h2>
+            <p>
+                Practice multiplication with interactive tables.
+                Enter any number from 1 to 100 and explore all tables
+                from 1 up to your chosen number.
+            </p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Made for learning · MathZone</p>
+        <p id="jecrc">JECRC Foundation</p>
+    </footer>
+
+</body>
 </html>
